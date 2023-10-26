@@ -308,24 +308,20 @@ public class Activation implements Serializable {
 				continue;
 			}
 
-//			Integer inputIndex = util.GetIndexByName(placeName, Parent.TempMarking);
-//			if (inputIndex == -1)
-//				continue;
-//
-//			PetriObject temp = Parent.TempMarking.get(inputIndex);
-
 			if (temp instanceof DataFloat) {
 				if (result == null) {
 					result = (PetriObject) ((DataFloat) temp).clone();
+				} else {
+					result.SetValue((float) result.GetValue() * (float) temp.GetValue());
 				}
-				result.SetValue((float) result.GetValue() * (float) temp.GetValue());
 			}
 
 			if (temp instanceof DataInteger) {
 				if (result == null) {
 					result = (PetriObject) ((DataInteger) temp).clone();
+				} else {
+					result.SetValue((Integer) result.GetValue() * (Integer) temp.GetValue());
 				}
-				result.SetValue((Integer) result.GetValue() * (Integer) temp.GetValue());
 			}
 		}
 		result.SetName(OutputPlaceName);
@@ -432,12 +428,14 @@ public class Activation implements Serializable {
 		PetriObject resultBack = null;
 
 		if (temp instanceof DataFloat) {
-			temp.SetValue(Math.pow((Float)temp.GetValue(),2));
+			temp.SetValue((Float)temp.GetValue()*(Float)temp.GetValue());
+			//temp.SetValue( Math.pow((Float) (Float) temp.GetValue(),2));
 			result = (PetriObject) ((DataFloat) temp).clone();
 		}
 
 		if (temp instanceof DataInteger) {
-			temp.SetValue(Math.pow((Integer)temp.GetValue(),2));
+			temp.SetValue((Integer)temp.GetValue()*(Integer)temp.GetValue());
+		//	temp.SetValue(Math.pow((Integer)temp.GetValue(),2));
 			result = (PetriObject) ((DataInteger) temp).clone();
 		} //takes only datafloat and datainteger types
 		

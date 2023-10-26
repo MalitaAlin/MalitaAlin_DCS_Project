@@ -27,16 +27,17 @@ public class Server {
 		DataFloat constValue = new DataFloat();
 		constValue.SetName("constValue");
 		//Ex 1
-		constValue.SetValue(0.01f);
+		constValue.SetValue(0.01f); //0.01f
 		pn.ConstantPlaceList.add(constValue);
 		
 		DataFloat p0 = new DataFloat();
 		p0.SetName("p0");
-		p0.SetValue(2.0f);
+		p0.SetValue(1.0f); 
 		pn.PlaceList.add(p0);
 		
 		DataFloat p1 = new DataFloat();
 		p1.SetName("p1");
+		//p1.SetValue(3.0f); //1.0f
 		pn.PlaceList.add(p1);
 		
 		DataFloat p2 = new DataFloat();
@@ -67,10 +68,11 @@ public class Server {
 		//lstInput.add("constValue");
 		// grdT1.Activations.add(new Activation(t1, lstInput, TransitionOperation.Prod, "p2"));
 		//Ex 2
-	 grdT1.Activations.add(new Activation(t1,"p1", TransitionOperation.Power, "p2"));
-		t1.GuardMappingList.add(grdT1);
-		t1.Delay = 0;
-		pn.Transitions.add(t1);
+	    grdT1.Activations.add(new Activation(t1,"p1", TransitionOperation.Power, "p2")); 
+		// grdT1.Activations.add(new Activation(t1, lstInput, TransitionOperation.Power, "p2"));
+		 t1.GuardMappingList.add(grdT1);
+			t1.Delay = 0;
+			pn.Transitions.add(t1);
 		
 		// T2------------------------------------------------------------------------
 		PetriTransition t2 = new PetriTransition(pn);

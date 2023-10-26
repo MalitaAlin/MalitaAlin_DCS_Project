@@ -30,7 +30,7 @@ public class Client {
 		pn.PlaceList.add(p0);
 		
 		DataFloat p1 = new DataFloat();
-		p1.SetValue(1.0f);//test?
+	//	p1.SetValue(1.0f);
 		p1.SetName("p1");
 		pn.PlaceList.add(p1);
 		
