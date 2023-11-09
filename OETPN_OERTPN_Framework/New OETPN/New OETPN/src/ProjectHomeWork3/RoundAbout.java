@@ -1,4 +1,4 @@
-package ProjectHomeWork2;
+package ProjectHomeWork3;
 
 import Components.Activation;
 import Components.Condition;
@@ -12,12 +12,12 @@ import Enumerations.LogicConnector;
 import Enumerations.TransitionCondition;
 import Enumerations.TransitionOperation;
 
-public class RoundAboutPN {
+public class RoundAbout {
 	
 	public static void main(String[] args) {
 		PetriNet pn = new PetriNet();
 		pn.PetriNetName = "Round About PN";
-		pn.NetworkPort = 1070;
+		pn.NetworkPort = 1092;
 		
 		//--- Places  Types
 		DataCarQueue p1 = new DataCarQueue();
