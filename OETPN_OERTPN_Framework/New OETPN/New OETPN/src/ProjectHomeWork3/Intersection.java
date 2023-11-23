@@ -245,6 +245,8 @@ public class Intersection {
 		GuardMapping grdT2 = new GuardMapping();
 		grdT2.condition = T2Ct1;
 		grdT2.Activations.add(new Activation(t2, "P_x1", TransitionOperation.PopElementWithoutTarget, "P_b1"));
+		//PopwithoutTarget in order to send only 1 car from the queue at the time,
+		//while also not specifying a target since it only has one possible target in this case
 	    grdT2.Activations.add(new Activation(t2, "P_TL1", TransitionOperation.Move, "P_TL1"));
 	    
 		t2.GuardMappingList.add(grdT2);
