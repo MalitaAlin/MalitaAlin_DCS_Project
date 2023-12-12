@@ -46,7 +46,7 @@ public class TestDelay {
 	        One.SetValue(1);
 	        pn.ConstantPlaceList.add(One);
 	        
-	        //T1-----------------------------------------------------------------
+	        //T1------------------ -----------------------------------------------
 	        PetriTransition t1 = new PetriTransition(pn);
 	        t1.TransitionName = "t1";
 	        t1.InputPlaceName.add("P1");

@@ -32,6 +32,13 @@ public class Intersection {
 		// -------------------------------------------------------------------
 		// -------------------------------Lane1--------------------------------
 		// --------------------------------------------------------------------
+		
+		//>>>>>>>>>>adding the full string signal to be sent to the controller
+	    DataString full = new DataString();	 	
+	    full.Printable = false;
+		full.SetName("full");
+		full.SetValue("full");
+		pn.ConstantPlaceList.add(full);
 
 		DataCar p1 = new DataCar();
 		p1.SetName("P_a1");
@@ -226,8 +233,8 @@ public class Intersection {
 		GuardMapping grdtu1 = new GuardMapping();
 		grdtu1.condition= T1Ct3;
 		
-		grdT1.Activations.add(new Activation(t1, "full", TransitionOperation.SendOverNetwork, "OP1"));
-		grdT1.Activations.add(new Activation(t1, "P_a1", TransitionOperation.Move,"P_a1"));
+		grdtu1.Activations.add(new Activation(t1, "full", TransitionOperation.SendOverNetwork, "OP1"));
+		grdtu1.Activations.add(new Activation(t1, "P_a1", TransitionOperation.Move,"P_a1"));
 		t1.GuardMappingList.add(grdtu1);
 		t1.Delay = 0;
 		pn.Transitions.add(t1);
